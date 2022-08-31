@@ -1,0 +1,167 @@
+{
+  "name": "书籍列表",
+  "version": "1.0.0",
+  "decription": "书籍列表",
+  "bind": {
+    "model": "book",
+    "withs": {
+      "category": {}
+    }
+  },
+  "apis": {},
+  "columns": {
+    "ID": {
+      "label": "ID",
+      "view": { "type": "label", "props": { "value": ":id" } }
+    },
+
+    "分类2": {
+      "label": "分类2",
+      "view": {
+        "type": "label",
+        "props": {
+          "value": ":category.name"
+        }
+      },
+      "edit": {
+        "type": "input",
+        "props": {
+          "value": ":category_id"
+        }
+      }
+    },
+    "分类": {
+      "label": "分类",
+      "view": {
+        "name": "label",
+        "props": {
+          "value": ":category.name"
+        }
+      },
+      "edit": {
+        "type": "treeSelect",
+        "props": {
+          "value": ":category_id",
+          "allowClear": true,
+          "remote": {
+            "api": "/api/select/category",
+            "query": { "select": ["id", "name"] }
+          }
+        }
+      }
+    },
+    "书籍名称": {
+      "label": "书籍名称",
+      "view": {
+        "type": "label",
+        "props": {
+          "value": ":name"
+        }
+      },
+      "edit": {
+        "type": "input",
+        "props": {
+          "value": ":name"
+        }
+      }
+    },
+    "作者": {
+      "label": "作者",
+      "view": {
+        "type": "label",
+        "props": {
+          "value": ":author"
+        }
+      },
+      "edit": {
+        "type": "input",
+        "props": {
+          "value": ":author"
+        }
+      }
+    },
+    "出版社": {
+      "label": "出版社",
+      "view": {
+        "type": "label",
+        "props": {
+          "value": ":press"
+        }
+      },
+      "edit": {
+        "type": "input",
+        "props": {
+          "value": ":press"
+        }
+      }
+    },
+    "价格": {
+      "label": "价格",
+      "view": {
+        "type": "label",
+        "props": {
+          "value": ":price"
+        }
+      },
+      "edit": {
+        "type": "input",
+        "props": {
+          "value": ":price"
+        }
+      }
+    }
+  },
+  "filters": {
+    "书籍名称": {
+      "label": "书籍名称",
+      "bind": "where.name.match",
+      "input": {
+        "type": "input",
+        "props": { "placeholder": "书籍名称" }
+      }
+    }
+  },
+  "list": {
+    "primary": "id",
+    "layout": {
+      "columns": [
+        { "name": "ID", "width": 80 },
+        { "name": "分类", "width": 200 },
+        { "name": "书籍名称", "width": 200 },
+        { "name": "出版社", "width": 200 },
+        { "name": "作者", "width": 200 },
+        { "name": "价格", "width": 200 }
+      ],
+      "filters": [{ "name": "书籍名称" }]
+    },
+    "actions": {
+      "pagination": { "props": { "showTotal": true } },
+      "create": {
+        "props": { "label": "添加书籍" }
+      }
+    },
+    "option": { "operation": { "unfold": true } }
+  },
+  "edit": {
+    "primary": "id",
+    "layout": {
+      "fieldset": [
+        {
+          "columns": [
+            { "name": "分类", "width": 8 },
+            { "name": "书籍名称", "width": 8 },
+            { "name": "出版社", "width": 8 },
+            { "name": "价格", "width": 8 },
+            { "name": "作者", "width": 8 }
+          ]
+        }
+      ]
+    },
+    "actions": {
+      "cancel": {},
+      "save": {},
+      "delete": { "type": "button", "props": { "label": "Delete" } }
+    },
+    "option": { "dev": false }
+  }
+}

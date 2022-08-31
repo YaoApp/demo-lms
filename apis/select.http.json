@@ -1,0 +1,19 @@
+{
+  "name": "下拉搜索",
+  "version": "1.0.0",
+  "description": "下拉搜索",
+  "guard": "bearer-jwt",
+  "group": "select",
+  "paths": [
+    {
+      "path": "/category",
+      "method": "GET",
+      "process": "flows.category",
+      "in": [],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    }
+  ]
+}

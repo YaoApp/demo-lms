@@ -1,0 +1,16 @@
+{
+  "name": "测试task",
+  "worker_nums": 10,
+  "attempts": 3,
+  "attempt_after": 200,
+  "timeout": 2,
+  "size": 1000,
+  "process": "scripts.task.Send",
+  "event": {
+    "next": "scripts.task.NextID",
+    "add": "scripts.task.OnAdd",
+    "success": "scripts.task.OnSuccess",
+    "error": "scripts.task.OnError",
+    "progress": "scripts.task.OnProgress"
+  }
+}

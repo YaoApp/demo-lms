@@ -1,0 +1,19 @@
+{
+  "name": "任务",
+  "version": "1.0.0",
+  "description": "任务",
+  "guard": "-",
+  "group": "task",
+  "paths": [
+    {
+      "path": "/task",
+      "method": "GET",
+      "process": "scripts.test.task",
+      "in": [],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    }
+  ]
+}

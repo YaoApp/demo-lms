@@ -1,0 +1,6 @@
+{
+  "name": "每分钟调用一次",
+  "schedule": "*/1 * * * *",
+  "process": "scripts.schedules.Send",
+  "args": []
+}
