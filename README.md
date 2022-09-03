@@ -15,7 +15,7 @@ Documentation: [https://yaoapps.com/en-US/doc](https://yaoapps.com/en-US/doc/Int
 ```bash
 docker run -d -p 5099:5099 --restart unless-stopped \
     -e YAO_INIT=reset \
-    -e YAO_PROCESS_RESET=flows.menu
+    -e YAO_PROCESS_RESET=flows.menu \
     yaoapp/demo-lms:1.0.0-amd64
 ```
 
