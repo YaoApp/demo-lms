@@ -37,15 +37,14 @@ mkdir /app/path/lms/logs
 
 cat << EOF
 YAO_ENV=development # development | production
-YAO_ROOT="/app/path/lms"
 YAO_HOST="0.0.0.0"
 YAO_PORT="5099"
 YAO_SESSION="memory"
-YAO_LOG="/app/path/lms/logs/application.log"
+YAO_LOG="./logs/application.log"
 YAO_LOG_MODE="TEXT"  #  TEXT | JSON
 YAO_JWT_SECRET="bLp@bi!oqo-2U+hoTRUG"
 YAO_DB_DRIVER=sqlite3 # sqlite3 | mysql
-YAO_DB_PRIMARY="/app/path/widget/db/yao.db"
+YAO_DB_PRIMARY="./db/yao.db"
 EOF > /app/path/lms/.env
 ```
 
